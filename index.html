@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wandera — туристичний гід та каталог найкращих напрямків по всьому світу." />
+  <title>Wandera — Туристичний гід</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/middle.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+<header>
+  <nav class="site-nav" id="siteNav">
+    <div class="container">
+      <div class="nav-inner">
+
+        <a href="#" class="nav-logo">Wan<em>dera</em></a>
+
+        <ul class="nav-links">
+          <li><a href="#catalog" class="active">Каталог</a></li>
+          <li><a href="#tours">Тури</a></li>
+          <li><a href="#featured">Гід</a></li>
+          <li><a href="#about">Про нас</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <!-- Theme switcher -->
+          <div class="theme-switcher" role="group" aria-label="Тема">
+            <button class="theme-btn active" data-theme-val="dark"   title="Темна"  aria-label="Темна тема">🌙</button>
+            <button class="theme-btn"        data-theme-val="light"  title="Світла" aria-label="Світла тема">☀️</button>
+            <button class="theme-btn"        data-theme-val="white"  title="Біла"   aria-label="Біла тема">◻️</button>
+          </div>
+
+          <button class="nav-cta d-none d-md-block">Зв'язатись</button>
+
+          <button class="nav-toggle d-lg-none" id="navToggle" aria-label="Меню">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="container position-relative" style="z-index:2">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="hero-content">
+          <span class="hero-eyebrow">Туристичний гід 2025</span>
+          <h1 class="hero-title">
+            Каталог<br>найкращих<br><em>напрямків</em>
+          </h1>
+          <p class="hero-sub">
+            Обирайте з 150+ перевірених маршрутів. Детальні гіди, поради та актуальні ціни для кожного мандрівника.
+          </p>
+          <div class="hero-actions">
+            <a href="#catalog" class="btn-gold">Переглянути каталог</a>
+            <a href="#featured" class="btn-ghost">
+              <span class="btn-ghost-icon">▶</span>
+              Дізнатись більше
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats (hidden on mobile via CSS) -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-n">150+</div>
+        <div class="hero-stat-l">Напрямків</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">48</div>
+        <div class="hero-stat-l">Країн</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">12k</div>
+        <div class="hero-stat-l">Мандрівників</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-txt">Гортати</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ MAIN ═══════════════════════════ -->
+<main>
+
+  <!-- CATALOG -->
+  <section class="catalog-section" id="catalog">
+    <div class="container">
+
+      <!-- Header -->
+      <div class="row align-items-end mb-4">
+        <div class="col-lg-6">
+          <span class="section-eyebrow">Популярні напрямки</span>
+          <h2 class="section-title">Куди вирушити<br><em>цього сезону</em></h2>
+        </div>
+        <div class="col-lg-6">
+          <p class="section-desc" style="max-width:360px; margin-left:auto;">
+            Ретельно відібрані локації — від тропічних пляжів до засніжених вершин.
+          </p>
+        </div>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="filter-bar">
+        <span class="filter-label">Регіон:</span>
+        <button class="chip active" onclick="filterChip(this)">Всі</button>
+        <button class="chip" onclick="filterChip(this)">Азія</button>
+        <button class="chip" onclick="filterChip(this)">Європа</button>
+        <button class="chip" onclick="filterChip(this)">Африка</button>
+        <button class="chip" onclick="filterChip(this)">Америка</button>
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input class="search-input" type="text" placeholder="Пошук напрямку..." />
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div class="catalog-grid">
+
+        <!-- Токіо -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=75" alt="Токіо" class="dest-img" loading="lazy" />
+          </div>
+          <div class="dest-body">
+            <span class="tag">Новинка</span>
+            <p class="dest-region">Японія · Азія</p>
+            <h3 class="dest-name">Токіо</h3>
+            <div class="dest-facts">
+              <span class="fact"><span class="fact-dot"></span>10 ночей</span>
+              <span class="fact"><span class="fact-dot"></span>Гід включено</span>
+            </div>
+            <div class="dest-footer">
+              <div>
+                <div class="dest-price">$1,450</div>
+                <div class="dest-price-sub">за особу</div>
+              </div>
+              <div class="dest-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Мальдіви -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=600&q=75" alt="Мальдіви" class="dest-img" loading="lazy" />
+          </div>
+          <div class="dest-body">
+            <span class="tag">Романтика</span>
+            <p class="dest-region">Мальдіви · Океан</p>
+            <h3 class="dest-name">Мальдіви</h3>
+            <div class="dest-facts">
+              <span class="fact"><span class="fact-dot"></span>7 ночей</span>
+              <span class="fact"><span class="fact-dot"></span>Бунгало</span>
+            </div>
+            <div class="dest-footer">
+              <div>
+                <div class="dest-price">$2,300</div>
+                <div class="dest-price-sub">за особу</div>
+              </div>
+              <div class="dest-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Дубай -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=75" alt="Дубай" class="dest-img" loading="lazy" />
+          </div>
+          <div class="dest-body">
+            <span class="tag">Люкс</span>
+            <p class="dest-region">ОАЕ · Близький Схід</p>
+            <h3 class="dest-name">Дубай</h3>
+            <div class="dest-facts">
+              <span class="fact"><span class="fact-dot"></span>7 ночей</span>
+              <span class="fact"><span class="fact-dot"></span>5★ готель</span>
+            </div>
+            <div class="dest-footer">
+              <div>
+                <div class="dest-price">$1,200</div>
+                <div class="dest-price-sub">за особу</div>
+              </div>
+              <div class="dest-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Париж -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://images.unsplash.com/photo-1549144511-f099e773c147?w=600&q=75" alt="Париж" class="dest-img" loading="lazy" />
+          </div>
+          <div class="dest-body">
+            <span class="tag">Класика</span>
+            <p class="dest-region">Франція · Європа</p>
+            <h3 class="dest-name">Париж</h3>
+            <div class="dest-facts">
+              <span class="fact"><span class="fact-dot"></span>5 ночей</span>
+              <span class="fact"><span class="fact-dot"></span>Екскурсії</span>
+            </div>
+            <div class="dest-footer">
+              <div>
+                <div class="dest-price">$750</div>
+                <div class="dest-price-sub">за особу</div>
+              </div>
+              <div class="dest-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Маракеш -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=600&q=75" alt="Марокко" class="dest-img" loading="lazy" />
+          </div>
+          <div class="dest-body">
+            <span class="tag">Пригода</span>
+            <p class="dest-region">Марокко · Африка</p>
+            <h3 class="dest-name">Маракеш</h3>
+            <div class="dest-facts">
+              <span class="fact"><span class="fact-dot"></span>9 ночей</span>
+              <span class="fact"><span class="fact-dot"></span>Сахара</span>
+            </div>
+            <div class="dest-footer">
+              <div>
+                <div class="dest-price">$890</div>
+                <div class="dest-price-sub">за особу</div>
+              </div>
+              <div class="dest-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ісландія -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://images.unsplash.com/photo-1480944657103-7fed22359e1d?w=600&q=75" alt="Ісландія" class="dest-img" loading="lazy" />
+          </div>
+          <div class="dest-body">
+            <span class="tag">Унікально</span>
+            <p class="dest-region">Ісландія · Північ</p>
+            <h3 class="dest-name">Ісландія</h3>
+            <div class="dest-facts">
+              <span class="fact"><span class="fact-dot"></span>8 ночей</span>
+              <span class="fact"><span class="fact-dot"></span>Сяйво</span>
+            </div>
+            <div class="dest-footer">
+              <div>
+                <div class="dest-price">$2,100</div>
+                <div class="dest-price-sub">за особу</div>
+              </div>
+              <div class="dest-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /catalog-grid -->
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="featured-section" id="featured">
+    <div class="container">
+      <div class="section-hd mb-4">
+        <div>
+          <span class="section-eyebrow">Тур місяця</span>
+          <h2 class="section-title" style="margin-bottom:0">Редакційний <em>вибір</em></h2>
+        </div>
+      </div>
+
+      <div class="featured-grid">
+        <div class="feat-card">
+          <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=900&q=80" alt="Норвегія" class="feat-img" loading="lazy" />
+          <div class="feat-body">
+            <h2 class="feat-title">Норвезькі<br><em>фіорди</em></h2>
+            <p class="feat-desc">Величні скандинавські пейзажі, водоспади й незаймана природа. Тур із супроводом досвідченого гіда для груп до 12 осіб.</p>
+            <div class="feat-pills">
+              <span class="pill">12 днів</span>
+              <span class="pill">До 12 осіб</span>
+              <span class="pill">Готелі 4–5★</span>
+              <span class="pill">Авіа включено</span>
+            </div>
+            <div class="feat-price-row">
+              <div>
+                <div class="feat-price">$2,890</div>
+                <div class="feat-price-label">за особу</div>
+              </div>
+              <button class="btn-gold">Забронювати</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tip-cards">
+          <div class="tip-card">
+            <div class="tip-num">01</div>
+            <div class="tip-title">Найкращий сезон</div>
+            <div class="tip-text">Травень–вересень — білі ночі і м'яка погода для хайкінгу по фіордах.</div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">02</div>
+            <div class="tip-title">Що взяти з собою</div>
+            <div class="tip-text">Водонепроникний одяг, треккінгові черевики та камеру з добрим об'єктивом.</div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">03</div>
+            <div class="tip-title">Бюджет поза туром</div>
+            <div class="tip-text">Норвегія — дорога країна. Закладайте $80–120 на день на харчування.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOURS LIST -->
+  <section class="tours-section" id="tours">
+    <div class="container">
+      <div class="section-hd">
+        <div>
+          <span class="section-eyebrow">Весь каталог</span>
+          <h2 class="section-title" style="margin-bottom:0">Всі <em>тури</em></h2>
+        </div>
+        <button class="see-all">Фільтрувати →</button>
+      </div>
+
+      <div class="tour-list">
+        <a href="#" class="tour-row">
+          <div class="tour-num">01</div>
+          <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=200&q=65" alt="Єгипет" class="tour-thumb" loading="lazy"/>
+          <div class="tour-info">
+            <div class="tour-country">Африка · Єгипет</div>
+            <div class="tour-name">Єгипет: Піраміди та Червоне море</div>
+            <div class="tour-meta">8 ночей · All inclusive · Авіа включено</div>
+          </div>
+          <div class="tour-right">
+            <div class="tour-price">$980</div>
+            <div class="tour-nights">за особу</div>
+          </div>
+        </a>
+
+        <a href="#" class="tour-row">
+          <div class="tour-num">02</div>
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&q=65" alt="Швейцарія" class="tour-thumb" loading="lazy"/>
+          <div class="tour-info">
+            <div class="tour-country">Європа · Швейцарія</div>
+            <div class="tour-name">Альпи: Зима в горах</div>
+            <div class="tour-meta">7 ночей · Ски-пас включено</div>
+          </div>
+          <div class="tour-right">
+            <div class="tour-price">$1,650</div>
+            <div class="tour-nights">за особу</div>
+          </div>
+        </a>
+
+        <a href="#" class="tour-row">
+          <div class="tour-num">03</div>
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=200&q=65" alt="Таїланд" class="tour-thumb" loading="lazy"/>
+          <div class="tour-info">
+            <div class="tour-country">Азія · Таїланд</div>
+            <div class="tour-name">Таїланд: Бангкок + Пхукет</div>
+            <div class="tour-meta">10 ночей · Екскурсії включено</div>
+          </div>
+          <div class="tour-right">
+            <div class="tour-price">$1,050</div>
+            <div class="tour-nights">за особу</div>
+          </div>
+        </a>
+
+        <a href="#" class="tour-row">
+          <div class="tour-num">04</div>
+          <img src="https://images.unsplash.com/photo-1543716091-a840c05249ec?w=200&q=65" alt="Іспанія" class="tour-thumb" loading="lazy"/>
+          <div class="tour-info">
+            <div class="tour-country">Європа · Іспанія</div>
+            <div class="tour-name">Барселона та Коста-Брава</div>
+            <div class="tour-meta">6 ночей · Готель 4★ · Сніданки</div>
+          </div>
+          <div class="tour-right">
+            <div class="tour-price">$720</div>
+            <div class="tour-nights">за особу</div>
+          </div>
+        </a>
+
+        <a href="#" class="tour-row">
+          <div class="tour-num">05</div>
+          <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=200&q=65" alt="Балі" class="tour-thumb" loading="lazy"/>
+          <div class="tour-info">
+            <div class="tour-country">Азія · Балі</div>
+            <div class="tour-name">Балі: Острів богів</div>
+            <div class="tour-meta">10 ночей · Гід + трансфери</div>
+          </div>
+          <div class="tour-right">
+            <div class="tour-price">$1,100</div>
+            <div class="tour-nights">за особу</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="features-section" id="about">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-eyebrow" style="justify-content:center">Наші переваги</span>
+        <h2 class="section-title">Чому обирають <em>Wandera</em></h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">🌍</span>
+          <h3 class="feature-title">150+ напрямків</h3>
+          <p class="feature-desc">Від бюджетних поїздок до розкішних приватних турів — є варіант для кожного.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🛡️</span>
+          <h3 class="feature-title">Гарантія ціни</h3>
+          <p class="feature-desc">Знайдете дешевше? Ми повернемо різницю або надамо додаткові послуги.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📞</span>
+          <h3 class="feature-title">Підтримка 24/7</h3>
+          <p class="feature-desc">Наша команда завжди на зв'язку — до, під час і після вашої подорожі.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">✈️</span>
+          <h3 class="feature-title">Все включено</h3>
+          <p class="feature-desc">Перельоти, готелі, трансфери та екскурсії — організуємо кожну деталь.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-hd mb-4">
+        <div>
+          <span class="section-eyebrow">Відгуки</span>
+          <h2 class="section-title" style="margin-bottom:0">Що кажуть <em>мандрівники</em></h2>
+        </div>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testi-card">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">Подорож до Норвегії — найкраща поїздка в моєму житті. Все організовано ідеально, гід — просто неймовірний.</p>
+          <div class="testi-author">
+            <img src="https://i.pravatar.cc/100?img=47" alt="Олена" class="testi-avatar"/>
+            <div>
+              <div class="testi-name">Олена Коваль</div>
+              <div class="testi-trip">Норвезькі фіорди, 2024</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">Мальдіви з Wandera — бунгало над водою, приватний пляж і жодної зайвої турботи. Повертаємось!</p>
+          <div class="testi-author">
+            <img src="https://i.pravatar.cc/100?img=32" alt="Михайло" class="testi-avatar"/>
+            <div>
+              <div class="testi-name">Михайло та Анна</div>
+              <div class="testi-trip">Мальдіви, 2024</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">Тур по Японії перевершив усі очікування. Команда врахувала всі наші побажання до найменших деталей.</p>
+          <div class="testi-author">
+            <img src="https://i.pravatar.cc/100?img=15" alt="Дмитро" class="testi-avatar"/>
+            <div>
+              <div class="testi-name">Дмитро Лисенко</div>
+              <div class="testi-trip">Токіо — Кіото, 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="container">
+      <span class="section-eyebrow" style="justify-content:center">Підписка</span>
+      <h2 class="newsletter-title">Отримуйте <em>кращі пропозиції</em></h2>
+      <p class="newsletter-sub">Першими дізнавайтесь про знижки та нові маршрути</p>
+      <div class="newsletter-form">
+        <input class="newsletter-input" type="email" placeholder="Ваш email" />
+        <button class="newsletter-submit">Підписатись</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <a href="#" class="footer-logo">Wan<em>dera</em></a>
+        <p class="footer-tagline">Преміум туристичний гід. Перетворюємо мрії про подорожі на незабутні спогади.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Instagram">✦</a>
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="Telegram">✈</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-2 mb-5 mb-lg-0">
+        <span class="footer-heading">Напрямки</span>
+        <ul class="footer-list">
+          <li><a href="#">Греція</a></li>
+          <li><a href="#">Балі</a></li>
+          <li><a href="#">Японія</a></li>
+          <li><a href="#">Норвегія</a></li>
+          <li><a href="#">Мальдіви</a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-6 col-lg-2 mb-5 mb-lg-0">
+        <span class="footer-heading">Компанія</span>
+        <ul class="footer-list">
+          <li><a href="#">Про нас</a></li>
+          <li><a href="#">Як ми працюємо</a></li>
+          <li><a href="#">Відгуки</a></li>
+          <li><a href="#">Блог</a></li>
+          <li><a href="#">Вакансії</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4">
+        <span class="footer-heading">Контакти</span>
+        <div class="contact-row">
+          <span class="contact-icon">📍</span>
+          <div class="contact-text">вул. Хрещатик, 22, офіс 7<br>м. Київ, Україна</div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon">📞</span>
+          <div class="contact-text"><a href="tel:+380441234567">+38 (044) 123-45-67</a></div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon">✉️</span>
+          <div class="contact-text"><a href="mailto:hello@wandera.ua">hello@wandera.ua</a></div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon">🕐</span>
+          <div class="contact-text">Пн–Пт: 9:00–19:00&nbsp; Сб: 10:00–16:00</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>Wandera</span>. Всі права захищено.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Конфіденційність</a>
+        <a href="#">Умови використання</a>
+        <a href="#">Карта сайту</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Вгору">↑</button>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  /* ---------- Navbar scroll ---------- */
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  /* ---------- Scroll-to-top ---------- */
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* ---------- Smooth anchor links ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  /* ---------- Theme switcher ---------- */
+  const root       = document.documentElement;
+  const themeBtns  = document.querySelectorAll('.theme-btn');
+
+  // Persist theme
+  const saved = localStorage.getItem('wandera-theme');
+  if (saved) applyTheme(saved);
+
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => applyTheme(btn.dataset.themeVal));
+  });
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem('wandera-theme', theme);
+    themeBtns.forEach(b => b.classList.toggle('active', b.dataset.themeVal === theme));
+  }
+
+  /* ---------- Filter chips (UI only) ---------- */
+  function filterChip(el) {
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
