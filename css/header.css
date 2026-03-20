@@ -6,33 +6,39 @@
 
 /* ---- Theme variables ---- */
 :root {
-  --gold:        #c8a96e;
-  --gold-light:  #e2c898;
-  --gold-border: rgba(200,169,110,0.22);
-  --gold-fill:   rgba(200,169,110,0.12);
+  /* Light theme (default) — warm sand + deep navy accent */
+  --gold:        #1a5fa8;
+  --gold-light:  #145091;
+  --gold-border: rgba(26,95,168,0.22);
+  --gold-fill:   rgba(26,95,168,0.09);
 
-  /* Light (default) */
-  --bg:      #f5f2eb;
-  --bg2:     #ede9df;
-  --bg3:     #e4e0d5;
-  --subtle:  #ccc8be;
-  --border:  rgba(150,120,55,0.22);
-  --txt:     #1a1815;
-  --muted:   #6b6558;
+  --bg:      #f4f6fa;
+  --bg2:     #eaedf4;
+  --bg3:     #dde2ee;
+  --subtle:  #c4cade;
+  --border:  rgba(26,95,168,0.18);
+  --txt:     #0d1422;
+  --muted:   #3a4a6b;
   --img-f:   brightness(0.82);
   --shadow:  0 8px 32px rgba(0,0,0,0.10);
 }
 
 [data-theme="dark"] {
-  --bg:      #0d0d12;
-  --bg2:     #13131b;
-  --bg3:     #1a1a26;
-  --subtle:  #2a2a38;
-  --border:  rgba(200,169,110,0.15);
-  --txt:     #ede9df;
-  --muted:   #6b6760;
-  --img-f:   brightness(0.72);
-  --shadow:  0 12px 40px rgba(0,0,0,0.55);
+  /* Dark theme — deep midnight + bright sky blue */
+  --gold:        #4da6e8;
+  --gold-light:  #78c0f0;
+  --gold-border: rgba(77,166,232,0.22);
+  --gold-fill:   rgba(77,166,232,0.10);
+
+  --bg:      #080d14;
+  --bg2:     #0e1520;
+  --bg3:     #141e2e;
+  --subtle:  #1e2e44;
+  --border:  rgba(77,166,232,0.15);
+  --txt:     #d8e8f5;
+  --muted:   #5a7a9a;
+  --img-f:   brightness(0.70);
+  --shadow:  0 12px 40px rgba(0,0,0,0.60);
 }
 
 /* ---- Reset ---- */
