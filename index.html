@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk" data-theme="dark">
+<html lang="uk" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,11 +37,10 @@
         </ul>
 
         <div class="nav-right">
-          <!-- Theme switcher -->
-          <div class="theme-switcher" role="group" aria-label="Тема">
-            <button class="theme-btn active" data-theme-val="dark"   title="Темна"  aria-label="Темна тема">🌙</button>
-            <button class="theme-btn"        data-theme-val="light"  title="Світла" aria-label="Світла тема">☀️</button>
-            <button class="theme-btn"        data-theme-val="white"  title="Біла"   aria-label="Біла тема">◻️</button>
+          <!-- Theme toggle -->
+          <div class="theme-toggle" role="group" aria-label="Тема">
+            <button class="theme-btn" data-theme-val="light" title="Світла тема" aria-label="Світла тема">☀️</button>
+            <button class="theme-btn" data-theme-val="dark"  title="Темна тема"  aria-label="Темна тема">🌙</button>
           </div>
 
           <button class="nav-cta d-none d-md-block">Зв'язатись</button>
@@ -129,14 +128,14 @@
       <!-- Filter bar -->
       <div class="filter-bar">
         <span class="filter-label">Регіон:</span>
-        <button class="chip active" onclick="filterChip(this)">Всі</button>
-        <button class="chip" onclick="filterChip(this)">Азія</button>
-        <button class="chip" onclick="filterChip(this)">Європа</button>
-        <button class="chip" onclick="filterChip(this)">Африка</button>
-        <button class="chip" onclick="filterChip(this)">Америка</button>
+        <button class="chip active" data-filter="всі" onclick="filterChip(this)">Всі</button>
+        <button class="chip" data-filter="азія" onclick="filterChip(this)">Азія</button>
+        <button class="chip" data-filter="європа" onclick="filterChip(this)">Європа</button>
+        <button class="chip" data-filter="африка" onclick="filterChip(this)">Африка</button>
+        <button class="chip" data-filter="північ" onclick="filterChip(this)">Північ</button>
         <div class="search-wrap">
           <span class="search-icon">⌕</span>
-          <input class="search-input" type="text" placeholder="Пошук напрямку..." />
+          <input class="search-input" id="destSearch" type="text" placeholder="Пошук напрямку..." autocomplete="off" />
         </div>
       </div>
 
@@ -144,7 +143,7 @@
       <div class="catalog-grid">
 
         <!-- Токіо -->
-        <div class="dest-card">
+        <div class="dest-card" data-region="азія">
           <div class="dest-img-wrap">
             <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=75" alt="Токіо" class="dest-img" loading="lazy" />
           </div>
@@ -158,7 +157,7 @@
             </div>
             <div class="dest-footer">
               <div>
-                <div class="dest-price">$1,450</div>
+                <div class="dest-price">59 900 ₴ <span class="price-usd">/ $1,450</span></div>
                 <div class="dest-price-sub">за особу</div>
               </div>
               <div class="dest-arrow">→</div>
@@ -167,7 +166,7 @@
         </div>
 
         <!-- Мальдіви -->
-        <div class="dest-card">
+        <div class="dest-card" data-region="азія">
           <div class="dest-img-wrap">
             <img src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=600&q=75" alt="Мальдіви" class="dest-img" loading="lazy" />
           </div>
@@ -181,7 +180,7 @@
             </div>
             <div class="dest-footer">
               <div>
-                <div class="dest-price">$2,300</div>
+                <div class="dest-price">95 200 ₴ <span class="price-usd">/ $2,300</span></div>
                 <div class="dest-price-sub">за особу</div>
               </div>
               <div class="dest-arrow">→</div>
@@ -190,7 +189,7 @@
         </div>
 
         <!-- Дубай -->
-        <div class="dest-card">
+        <div class="dest-card" data-region="азія">
           <div class="dest-img-wrap">
             <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=75" alt="Дубай" class="dest-img" loading="lazy" />
           </div>
@@ -204,7 +203,7 @@
             </div>
             <div class="dest-footer">
               <div>
-                <div class="dest-price">$1,200</div>
+                <div class="dest-price">49 600 ₴ <span class="price-usd">/ $1,200</span></div>
                 <div class="dest-price-sub">за особу</div>
               </div>
               <div class="dest-arrow">→</div>
@@ -213,7 +212,7 @@
         </div>
 
         <!-- Париж -->
-        <div class="dest-card">
+        <div class="dest-card" data-region="європа">
           <div class="dest-img-wrap">
             <img src="https://images.unsplash.com/photo-1549144511-f099e773c147?w=600&q=75" alt="Париж" class="dest-img" loading="lazy" />
           </div>
@@ -227,7 +226,7 @@
             </div>
             <div class="dest-footer">
               <div>
-                <div class="dest-price">$750</div>
+                <div class="dest-price">31 000 ₴ <span class="price-usd">/ $750</span></div>
                 <div class="dest-price-sub">за особу</div>
               </div>
               <div class="dest-arrow">→</div>
@@ -236,7 +235,7 @@
         </div>
 
         <!-- Маракеш -->
-        <div class="dest-card">
+        <div class="dest-card" data-region="африка">
           <div class="dest-img-wrap">
             <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=600&q=75" alt="Марокко" class="dest-img" loading="lazy" />
           </div>
@@ -250,7 +249,7 @@
             </div>
             <div class="dest-footer">
               <div>
-                <div class="dest-price">$890</div>
+                <div class="dest-price">36 800 ₴ <span class="price-usd">/ $890</span></div>
                 <div class="dest-price-sub">за особу</div>
               </div>
               <div class="dest-arrow">→</div>
@@ -259,7 +258,7 @@
         </div>
 
         <!-- Ісландія -->
-        <div class="dest-card">
+        <div class="dest-card" data-region="північ">
           <div class="dest-img-wrap">
             <img src="https://images.unsplash.com/photo-1480944657103-7fed22359e1d?w=600&q=75" alt="Ісландія" class="dest-img" loading="lazy" />
           </div>
@@ -273,7 +272,7 @@
             </div>
             <div class="dest-footer">
               <div>
-                <div class="dest-price">$2,100</div>
+                <div class="dest-price">86 800 ₴ <span class="price-usd">/ $2,100</span></div>
                 <div class="dest-price-sub">за особу</div>
               </div>
               <div class="dest-arrow">→</div>
@@ -310,7 +309,7 @@
             </div>
             <div class="feat-price-row">
               <div>
-                <div class="feat-price">$2,890</div>
+                <div class="feat-price">119 500 ₴ <span class="price-usd">/ $2,890</span></div>
                 <div class="feat-price-label">за особу</div>
               </div>
               <button class="btn-gold">Забронювати</button>
@@ -360,7 +359,7 @@
             <div class="tour-meta">8 ночей · All inclusive · Авіа включено</div>
           </div>
           <div class="tour-right">
-            <div class="tour-price">$980</div>
+            <div class="tour-price">40 500 ₴ <span class="price-usd">/ $980</span></div>
             <div class="tour-nights">за особу</div>
           </div>
         </a>
@@ -374,7 +373,7 @@
             <div class="tour-meta">7 ночей · Ски-пас включено</div>
           </div>
           <div class="tour-right">
-            <div class="tour-price">$1,650</div>
+            <div class="tour-price">68 200 ₴ <span class="price-usd">/ $1,650</span></div>
             <div class="tour-nights">за особу</div>
           </div>
         </a>
@@ -388,7 +387,7 @@
             <div class="tour-meta">10 ночей · Екскурсії включено</div>
           </div>
           <div class="tour-right">
-            <div class="tour-price">$1,050</div>
+            <div class="tour-price">43 400 ₴ <span class="price-usd">/ $1,050</span></div>
             <div class="tour-nights">за особу</div>
           </div>
         </a>
@@ -402,7 +401,7 @@
             <div class="tour-meta">6 ночей · Готель 4★ · Сніданки</div>
           </div>
           <div class="tour-right">
-            <div class="tour-price">$720</div>
+            <div class="tour-price">29 800 ₴ <span class="price-usd">/ $720</span></div>
             <div class="tour-nights">за особу</div>
           </div>
         </a>
@@ -416,7 +415,7 @@
             <div class="tour-meta">10 ночей · Гід + трансфери</div>
           </div>
           <div class="tour-right">
-            <div class="tour-price">$1,100</div>
+            <div class="tour-price">45 500 ₴ <span class="price-usd">/ $1,100</span></div>
             <div class="tour-nights">за особу</div>
           </div>
         </a>
@@ -567,7 +566,7 @@
         </div>
         <div class="contact-row">
           <span class="contact-icon">✉️</span>
-          <div class="contact-text"><a href="mailto:hello@wandera.ua">hello@wandera.ua</a></div>
+          <div class="contact-text"><a href="/cdn-cgi/l/email-protection#3058555c5c5f7047515e545542511e4551"><span class="__cf_email__" data-cfemail="177f727b7b785760767973726576396276">[email&#160;protected]</span></a></div>
         </div>
         <div class="contact-row">
           <span class="contact-icon">🕐</span>
@@ -579,7 +578,7 @@
     <div class="footer-divider"></div>
 
     <div class="footer-bottom">
-      <p class="footer-copy">© 2025 <span>Wandera</span>. Всі права захищено.</p>
+      <p class="footer-copy">© 2026 <span>Wandera</span>. Всі права захищено.</p>
       <div class="footer-bottom-links">
         <a href="#">Конфіденційність</a>
         <a href="#">Умови використання</a>
@@ -592,37 +591,36 @@
 <button class="scroll-top" id="scrollTop" aria-label="Вгору">↑</button>
 
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-  /* ---------- Navbar scroll ---------- */
+  /* ---- Navbar scroll ---- */
   const nav = document.getElementById('siteNav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
 
-  /* ---------- Scroll-to-top ---------- */
+  /* ---- Scroll-to-top ---- */
   const scrollBtn = document.getElementById('scrollTop');
   window.addEventListener('scroll', () => {
     scrollBtn.classList.toggle('visible', window.scrollY > 400);
   }, { passive: true });
   scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  /* ---------- Smooth anchor links ---------- */
+  /* ---- Smooth anchor links ---- */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
 
-  /* ---------- Theme switcher ---------- */
-  const root       = document.documentElement;
-  const themeBtns  = document.querySelectorAll('.theme-btn');
+  /* ---- Theme switcher ---- */
+  const root = document.documentElement;
+  const themeBtns = document.querySelectorAll('.theme-btn');
 
-  // Persist theme
-  const saved = localStorage.getItem('wandera-theme');
-  if (saved) applyTheme(saved);
+  const saved = localStorage.getItem('wandera-theme') || 'light';
+  applyTheme(saved);
 
   themeBtns.forEach(btn => {
     btn.addEventListener('click', () => applyTheme(btn.dataset.themeVal));
@@ -634,10 +632,62 @@
     themeBtns.forEach(b => b.classList.toggle('active', b.dataset.themeVal === theme));
   }
 
-  /* ---------- Filter chips (UI only) ---------- */
+  /* ---- Filter + Search ---- */
+  let activeRegion = 'всі';
+  let searchQuery  = '';
+
   function filterChip(el) {
     document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
     el.classList.add('active');
+    activeRegion = (el.dataset.filter || 'всі').toLowerCase();
+    applyFilters();
+  }
+
+  const searchInput = document.getElementById('destSearch');
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      searchQuery = searchInput.value.trim().toLowerCase();
+      applyFilters();
+    });
+  }
+
+  function applyFilters() {
+    const cards = document.querySelectorAll('.dest-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const region   = (card.dataset.region || '').toLowerCase();
+      const nameEl   = card.querySelector('.dest-name');
+      const name     = nameEl ? nameEl.textContent.toLowerCase() : '';
+      const regionEl = card.querySelector('.dest-region');
+      const regionTxt = regionEl ? regionEl.textContent.toLowerCase() : '';
+
+      const matchRegion = activeRegion === 'всі' || region === activeRegion;
+      const matchSearch = searchQuery === '' || name.includes(searchQuery) || regionTxt.includes(searchQuery);
+
+      if (matchRegion && matchSearch) {
+        card.style.display = '';
+        card.style.animation = 'fadeUp 0.35s ease both';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Show empty state if nothing found
+    let emptyEl = document.getElementById('catalog-empty');
+    if (visibleCount === 0) {
+      if (!emptyEl) {
+        emptyEl = document.createElement('div');
+        emptyEl.id = 'catalog-empty';
+        emptyEl.style.cssText = 'grid-column:1/-1; text-align:center; padding:48px 0; color:var(--muted); font-size:15px;';
+        emptyEl.innerHTML = '<span style="font-size:2rem; display:block; margin-bottom:12px;">🔍</span>Нічого не знайдено. Спробуйте інший запит.';
+        document.querySelector('.catalog-grid').appendChild(emptyEl);
+      }
+      emptyEl.style.display = '';
+    } else if (emptyEl) {
+      emptyEl.style.display = 'none';
+    }
   }
 </script>
 
