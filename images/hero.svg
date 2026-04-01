@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB"/>
+      <stop offset="60%" style="stop-color:#b8dff5"/>
+      <stop offset="100%" style="stop-color:#ddeedd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="500" fill="url(#sky)"/>
+  <!-- Sun -->
+  <circle cx="900" cy="100" r="60" fill="#FFE066" opacity="0.8"/>
+  <!-- Mountains back -->
+  <polygon points="0,500 200,200 400,500" fill="#5a8a6a" opacity="0.6"/>
+  <polygon points="150,500 400,180 650,500" fill="#4a7a5a" opacity="0.7"/>
+  <polygon points="400,500 650,150 900,500" fill="#3a6a4a" opacity="0.8"/>
+  <polygon points="700,500 950,170 1200,500" fill="#2d5a3a" opacity="0.9"/>
+  <!-- Forest -->
+  <rect x="0" y="380" width="1200" height="120" fill="#2a5a35"/>
+  <!-- Trees -->
+  <g fill="#1a4025">
+    <polygon points="80,380 110,310 140,380"/>
+    <polygon points="200,380 240,290 280,380"/>
+    <polygon points="350,380 390,300 430,380"/>
+    <polygon points="500,380 550,280 600,380"/>
+    <polygon points="700,380 740,295 780,380"/>
+    <polygon points="900,380 940,305 980,380"/>
+    <polygon points="1050,380 1090,295 1130,380"/>
+  </g>
+  <!-- Snow peaks -->
+  <polygon points="400,180 420,200 380,200" fill="white" opacity="0.9"/>
+  <polygon points="650,150 670,175 630,175" fill="white" opacity="0.9"/>
+  <polygon points="950,170 970,195 930,195" fill="white" opacity="0.9"/>
+</svg>

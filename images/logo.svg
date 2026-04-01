@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44">
+  <circle cx="22" cy="22" r="22" fill="#3a7d44"/>
+  <!-- Globe lines -->
+  <circle cx="22" cy="22" r="14" fill="none" stroke="white" stroke-width="1.5"/>
+  <ellipse cx="22" cy="22" rx="7" ry="14" fill="none" stroke="white" stroke-width="1"/>
+  <line x1="8" y1="22" x2="36" y2="22" stroke="white" stroke-width="1"/>
+  <!-- Plane -->
+  <polygon points="22,8 19,16 25,16" fill="white"/>
+  <rect x="18" y="14" width="8" height="3" fill="white" rx="1"/>
+</svg>
