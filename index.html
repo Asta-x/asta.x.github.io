@@ -1,163 +1,113 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wandera — Подорожі по Світу</title>
-
-  <!-- Bootstrap 5 (локально) -->
+  <title>Agridera Seeds and Agriculture Ltd</title>
   <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <!-- Власні стилі -->
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Bootstrap Icons CDN (іконки) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
 <!-- ============================================================
-     TOPBAR
-     ============================================================ -->
-<div class="topbar d-none d-md-block">
-  <div class="container d-flex justify-content-between align-items-center">
-    <span><i class="bi bi-telephone-fill me-1"></i> +38 (044) 123-45-67 &nbsp;|&nbsp;
-          <i class="bi bi-envelope-fill me-1"></i> info@wandera.ua</span>
-    <span>
-      <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="me-3"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="me-3"><i class="bi bi-youtube"></i></a>
-      <a href="#"><i class="bi bi-telegram"></i></a>
-    </span>
-  </div>
-</div>
-
-<!-- ============================================================
-     HEADER / NAVBAR
+     HEADER
      ============================================================ -->
 <header class="site-header">
-  <nav class="navbar navbar-expand-lg py-2">
-    <div class="container">
+  <div class="container">
+    <div class="header-inner">
 
-      <!-- Logo -->
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <img src="images/logo.svg" alt="Wandera" class="logo-img" />
-        <span>
-          <span class="logo-name">Wandera</span>
-          <span class="logo-tagline">мандри світом</span>
-        </span>
+      <a href="#" class="logo">
+        <img src="images/Logo@2x.png" alt="Agridera Seeds and Agriculture" />
       </a>
 
-      <!-- Search (desktop center) -->
-      <div class="header-search d-none d-lg-flex mx-auto">
-        <input type="text" class="form-control" placeholder="Пошук напрямків або турів..." />
-        <button class="btn-search"><i class="bi bi-search"></i></button>
+      <div class="header-search">
+        <input type="text" placeholder="Search" />
+        <button type="button">
+          <img src="images/Group.png" alt="search" />
+        </button>
       </div>
 
-      <!-- Toggler (mobile) -->
-      <button class="navbar-toggler border-0" type="button"
-              data-bs-toggle="collapse" data-bs-target="#mainNav"
-              aria-controls="mainNav" aria-expanded="false" aria-label="Меню">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <nav class="main-nav">
+        <a href="#">Home</a>
+        <a href="#">Company Profile</a>
+        <a href="#">Products</a>
+        <a href="#">Services</a>
+        <a href="#">R &amp; D</a>
+        <a href="#">Contact</a>
+      </nav>
 
-      <!-- Nav links -->
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link active" href="#">Головна</a></li>
-          <li class="nav-item"><a class="nav-link" href="#profile">Про компанію</a></li>
-          <li class="nav-item"><a class="nav-link" href="#destinations">Напрямки</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tours">Тури</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tips">Поради</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Контакти</a></li>
-        </ul>
-      </div>
     </div>
-  </nav>
+  </div>
 </header>
 
 <!-- ============================================================
-     HERO SECTION
+     HERO
      ============================================================ -->
-<section class="hero-section" id="home">
-  <div class="hero-bg-img"></div>
-  <!-- SVG fallback bg -->
-  <img src="images/hero.svg" alt=""
-       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;pointer-events:none;"/>
-  <div class="container text-center" style="position:relative;z-index:2;">
-    <p class="text-white text-uppercase fw-semibold mb-2" style="letter-spacing:3px;font-size:13px;opacity:.85;">
-      Відкрий світ разом з нами
-    </p>
-    <h1 class="hero-title">Wandera — Мандри<br/>по Всьому Світу</h1>
-    <p class="hero-sub">Незабутні подорожі, перевірені маршрути, турботливий сервіс<br/>
-      від Ukrainian Travel Agency з 2010 року</p>
-    <a href="#tours" class="btn-hero">Обрати тур</a>
+<section class="hero-section">
+  <img
+    src="images/bg.jpg"
+    alt="Agridera wheat field"
+    class="hero-bg"
+  />
+  <div class="hero-content">
+    <h1 class="hero-title">Agridera Seeds and Agriculture Ltd</h1>
+    <a href="#" class="btn-readmore">READ MORE</a>
   </div>
 </section>
 
 <!-- ============================================================
      CATEGORIES STRIP
      ============================================================ -->
-<section class="categories-strip" id="destinations">
+<section class="categories-strip">
   <div class="container">
-    <div class="row row-cols-3 row-cols-md-4 row-cols-lg-7 g-2">
-      <div class="col"><div class="cat-item">
-        <span class="cat-icon">🏔️</span>
-        <span class="cat-label">Гори</span>
-      </div></div>
-      <div class="col"><div class="cat-item">
-        <span class="cat-icon">🏖️</span>
-        <span class="cat-label">Пляжний відпочинок</span>
-      </div></div>
-      <div class="col"><div class="cat-item">
-        <span class="cat-icon">🏛️</span>
-        <span class="cat-label">Культурні тури</span>
-      </div></div>
-      <div class="col"><div class="cat-item">
-        <span class="cat-icon">🌿</span>
-        <span class="cat-label">Екотуризм</span>
-      </div></div>
-      <div class="col"><div class="cat-item">
-        <span class="cat-icon">🍽️</span>
-        <span class="cat-label">Гастротури</span>
-      </div></div>
-      <div class="col"><div class="cat-item">
-        <span class="cat-icon">🚢</span>
-        <span class="cat-label">Круїзи</span>
-      </div></div>
-      <div class="col"><div class="cat-item">
-        <span class="cat-icon">🎒</span>
-        <span class="cat-label">Бекпекінг</span>
-      </div></div>
-    </div>
-  </div>
-</section>
+    <div class="row row-cols-7 g-0 justify-content-center">
 
-<!-- ============================================================
-     VISION
-     ============================================================ -->
-<section class="vision-section position-relative overflow-hidden" id="profile">
-  <div class="blob-right d-none d-lg-block"></div>
-  <div class="container">
-    <div class="row align-items-center g-5">
-
-      <!-- Text -->
-      <div class="col-lg-6">
-        <div class="section-tag"><span></span><span></span><span></span></div>
-        <h2 class="section-heading mb-3">Наше Бачення</h2>
-        <p class="section-text">
-          Ми віримо, що кожна людина заслуговує пережити магію подорожі — відкрити нові горизонти,
-          зустріти різні культури та повернутися додому зміненою. Wandera — це не просто туристична агенція,
-          це команда мандрівників, які самі об'їздили понад 80 країн і знають, що робить поїздку незабутньою.
-        </p>
-        <p class="section-text mt-3">
-          Ми підтримуємо сталий туризм і намагаємося мінімізувати екологічний слід, обираючи
-          відповідальних партнерів по всьому світу.
-        </p>
+      <div class="col d-flex justify-content-center">
+        <div class="cat-item">
+          <img src="images/Vector.png" alt="Wheat" class="cat-icon" />
+          <span class="cat-label">Wheat</span>
+        </div>
       </div>
 
-      <!-- Image -->
-      <div class="col-lg-6">
-        <div class="vision-img">
-          <img src="images/vision.svg" alt="Наше бачення — мандрівник з біноклем" />
+      <div class="col d-flex justify-content-center">
+        <div class="cat-item">
+          <img src="images/ico-watermelon.svg" alt="Confection Watermelon" class="cat-icon" />
+          <span class="cat-label">Confection Watermelon</span>
+        </div>
+      </div>
+
+      <div class="col d-flex justify-content-center">
+        <div class="cat-item">
+          <img src="images/ico-clover.svg" alt="Clover" class="cat-icon" />
+          <span class="cat-label">Clover</span>
+        </div>
+      </div>
+
+      <div class="col d-flex justify-content-center">
+        <div class="cat-item">
+          <img src="images/ico-sunflower.svg" alt="Confection Sunflower" class="cat-icon" />
+          <span class="cat-label">Confection Sunflower</span>
+        </div>
+      </div>
+
+      <div class="col d-flex justify-content-center">
+        <div class="cat-item">
+          <img src="images/ico-tomato.svg" alt="Tomato" class="cat-icon" />
+          <span class="cat-label">Tomato</span>
+        </div>
+      </div>
+
+      <div class="col d-flex justify-content-center">
+        <div class="cat-item">
+          <img src="images/ico-eggplant.svg" alt="Eggplant P/O" class="cat-icon" />
+          <span class="cat-label">Eggplant P/O</span>
+        </div>
+      </div>
+
+      <div class="col d-flex justify-content-center">
+        <div class="cat-item">
+          <img src="images/ico-ornsunflower.svg" alt="Ornamental Sunflower" class="cat-icon" />
+          <span class="cat-label">Ornamental Sunflower</span>
         </div>
       </div>
 
@@ -166,106 +116,134 @@
 </section>
 
 <!-- ============================================================
-     MISSION
+     VISION + MISSION
      ============================================================ -->
-<section class="mission-section position-relative overflow-hidden" id="tours">
-  <div class="blob-left d-none d-lg-block"></div>
-  <div class="container">
-    <div class="row align-items-center g-5">
+<div class="vision-mission-wrapper">
+  <!-- Blob decorations -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
 
-      <!-- Image + play button -->
-      <div class="col-lg-6">
-        <div class="vision-img video-wrap">
-          <img src="images/mission.svg" alt="Місія — глобус і маршрути" />
-          <div class="play-btn" title="Дивитись відео">▶</div>
+  <div class="container">
+
+    <!-- VISION -->
+    <div class="vision-row">
+      <div class="vision-text">
+        <h2 class="section-title">Vision</h2>
+        <div class="section-dots">
+          <span></span><span></span><span></span><span></span><span></span>
         </div>
-      </div>
-
-      <!-- Text -->
-      <div class="col-lg-6">
-        <div class="section-tag"><span></span><span></span><span></span></div>
-        <h2 class="section-heading mb-3">Наша Місія</h2>
         <p class="section-text">
-          Розробляти та просувати авторські маршрути по найцікавіших куточках Землі —
-          від Сахари до Антарктиди, від шумних мегаполісів до затишних гірських сіл.
-        </p>
-        <p class="section-text mt-3">
-          Ми надаємо повну підтримку: від підбору маршруту і бронювання до страхування
-          та консьєрж-сервісу на місці. Подорожуйте впевнено — ми поруч на кожному кроці.
+          We believe in long-term growth with an emphasis on the potential
+          of emerging markets. We also support the global need of feeding
+          the growing population.
         </p>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     STATS
-     ============================================================ -->
-<section class="stats-section" id="stats">
-  <div class="container">
-    <div class="row text-center g-4">
-      <div class="col-6 col-md-3">
-        <div class="stat-number" data-count="15000">0+</div>
-        <div class="stat-label">Задоволених клієнтів</div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-number" data-count="80">0+</div>
-        <div class="stat-label">Країн у каталозі</div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-number" data-count="350">0+</div>
-        <div class="stat-label">Авторських маршрутів</div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-number" data-count="14">0+</div>
-        <div class="stat-label">Років досвіду</div>
+      <div class="vision-photo">
+        <!--
+          Фото: руки в рукавичках з рослиною (як у Figma).
+          Підключається з Unsplash при наявності інтернету.
+          Для офлайн — замінити src на локальний файл images/vision.jpg
+        -->
+        <img
+          src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=700&h=400&fit=crop&auto=format"
+          alt="Vision — researcher with plant seedling"
+          onerror="this.src='images/vision.jpg'"
+        />
       </div>
     </div>
+
+    <!-- MISSION -->
+    <div class="mission-row">
+      <div class="mission-photo">
+        <!--
+          Фото: паростки зі світлом (як у Figma).
+        -->
+        <img
+          src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&h=400&fit=crop&auto=format"
+          alt="Mission — seedlings growing"
+          onerror="this.src='images/mission.jpg'"
+        />
+        <div class="play-btn"></div>
+      </div>
+      <div class="mission-text">
+        <h2 class="section-title">Mission</h2>
+        <div class="section-dots">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p class="section-text">
+          Breeding and marketing seeds for advanced field crops and vegetable
+          varieties that provide an added value to all supply chain partners.
+        </p>
+      </div>
+    </div>
+
   </div>
-</section>
+</div>
 
 <!-- ============================================================
      MAIN ACTIVITIES
      ============================================================ -->
-<section class="activities-section" id="tips">
+<section class="activities-section">
   <div class="container">
-    <div class="section-tag justify-content-center d-flex"><span></span><span></span><span></span></div>
-    <h2 class="section-heading text-center mb-2">Основні напрямки Wandera</h2>
-    <p class="text-center section-text mb-5">
-      Обирайте тип подорожі — ми підберемо ідеальний тур саме для вас
-    </p>
-    <div class="row g-4">
 
+    <h2 class="activities-title">Agridera's main activities</h2>
+    <div class="section-dots activities-dots d-flex">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Cotton -->
       <div class="col-md-4">
         <div class="activity-card">
-          <img src="images/act-sea.svg" alt="Морський відпочинок" class="activity-icon" />
-          <div class="activity-title">Морський відпочинок</div>
+          <div class="activity-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=300&h=200&fit=crop&auto=format"
+              alt="Open field crop seeds — cotton"
+              onerror="this.src='images/cotton.jpg'"
+            />
+          </div>
+          <div class="activity-title">Open field crop seeds</div>
+          <div class="activity-divider"></div>
           <p class="activity-desc">
-            Туреччина, Греція, Хорватія, Єгипет та Балі —<br/>
-            вибір пляжного раю для всієї родини.
+            wheat, cotton, legumes,<br />hybrid confection sunflower
           </p>
         </div>
       </div>
 
+      <!-- Tomato -->
       <div class="col-md-4">
         <div class="activity-card">
-          <img src="images/act-mountain.svg" alt="Гірські пригоди" class="activity-icon" />
-          <div class="activity-title">Гірські пригоди</div>
+          <div class="activity-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1546470427-e26264be0b0d?w=300&h=200&fit=crop&auto=format"
+              alt="Vegetable seeds — tomato"
+              onerror="this.src='images/tomato.jpg'"
+            />
+          </div>
+          <div class="activity-title">Vegetable seeds</div>
+          <div class="activity-divider"></div>
           <p class="activity-desc">
-            Альпи, Карпати, Гімалаї, Анди —<br/>
-            треккінг, лижний сезон і альпінізм.
+            hybrid open field tomatoes,<br />eggplant, onion, paprika, etc.
           </p>
         </div>
       </div>
 
+      <!-- Sunflower -->
       <div class="col-md-4">
         <div class="activity-card">
-          <img src="images/act-city.svg" alt="Міські тури" class="activity-icon" />
-          <div class="activity-title">Міські тури</div>
+          <div class="activity-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=300&h=200&fit=crop&auto=format"
+              alt="Ornamental seeds — sunflower"
+              onerror="this.src='images/sunflower.jpg'"
+            />
+          </div>
+          <div class="activity-title">Ornamental seeds</div>
+          <div class="activity-divider"></div>
           <p class="activity-desc">
-            Париж, Токіо, Нью-Йорк, Дубай —<br/>
-            культура, архітектура та гастрономія.
+            hybrid cut sunflowers, hybrid<br />patio tomatoes, Bells of Irland, etc.
           </p>
         </div>
       </div>
@@ -277,33 +255,33 @@
 <!-- ============================================================
      FOOTER
      ============================================================ -->
-<footer class="site-footer" id="contact">
+<footer class="site-footer">
   <div class="container">
-    <div class="text-center footer-nav mb-3">
-      <a href="#">Про компанію</a>
-      <a href="#">Управління</a>
-      <a href="#">Тури</a>
-      <a href="#">FAQ</a>
-      <a href="#">Посилання</a>
-      <a href="#">Карта сайту</a>
-      <a href="#">Контакти</a>
+    <div class="footer-top">
+
+      <nav class="footer-nav">
+        <a href="#">PROFILE</a>
+        <a href="#">MANAGEMENT</a>
+        <a href="#">PRODUCTS</a>
+        <a href="#">R&amp;D</a>
+        <a href="#">LINKS</a>
+        <a href="#">SITEMAP</a>
+        <a href="#">CONTACT</a>
+      </nav>
+
+      <div class="footer-social">
+        <a href="#" title="LinkedIn">in</a>
+        <a href="#" title="Instagram">ig</a>
+        <a href="#" title="Google+">g+</a>
+        <a href="#" title="Twitter">tw</a>
+        <a href="#" title="Facebook">fb</a>
+      </div>
+
     </div>
-    <div class="text-center footer-social mb-2">
-      <a href="#"><i class="bi bi-facebook"></i></a>
-      <a href="#"><i class="bi bi-instagram"></i></a>
-      <a href="#"><i class="bi bi-youtube"></i></a>
-      <a href="#"><i class="bi bi-telegram"></i></a>
-      <a href="#"><i class="bi bi-pinterest"></i></a>
-    </div>
-    <p class="text-center footer-copy">
-      © Wandera Travel Agency, 2010–2025. Всі права захищено.
-    </p>
+    <p class="footer-copy">AGRIDERA SEEDS &amp; AGRICULTURE LTD. &copy; 2020</p>
   </div>
 </footer>
 
-<!-- Bootstrap JS (локально) -->
 <script src="js/bootstrap.bundle.min.js"></script>
-<!-- Власний JS -->
-<script src="js/main.js"></script>
 </body>
 </html>
