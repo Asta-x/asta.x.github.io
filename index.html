@@ -9,106 +9,124 @@
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="site-header">
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2">
   <div class="container">
-    <div class="header-inner">
 
-      <a href="#" class="logo">
-        <img src="images/Logo@2x.png" alt="Agridera" />
-      </a>
+    <!-- Logo -->
+    <a class="navbar-brand p-0" href="#">
+      <img src="images/Logo@2x.png" alt="Agridera" style="height:58px;width:auto;">
+    </a>
 
-      <div class="header-search">
-        <input type="text" placeholder="Search" />
-        <button type="button">
-          <img src="images/Group.png" alt="search" />
-        </button>
-      </div>
-
-      <nav class="main-nav">
-        <a href="#">Home</a>
-        <a href="#">Company Profile</a>
-        <a href="#">Products</a>
-        <a href="#">Services</a>
-        <a href="#">R &amp; D</a>
-        <a href="#">Contact</a>
-      </nav>
-
+    <!-- Search (центр) -->
+    <div class="d-none d-lg-flex align-items-center mx-auto header-search">
+      <input type="text" placeholder="Search" class="header-search-input" />
+      <button class="header-search-btn" type="button">
+        <img src="images/Group.png" alt="search" style="width:14px;height:14px;opacity:.5;">
+      </button>
     </div>
-  </div>
-</header>
 
-<!-- HERO -->
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav links -->
+    <div class="collapse navbar-collapse flex-grow-0" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Company Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">R &amp; D</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
 <section class="hero-section">
-  <img src="images/bg.jpg" alt="wheat field" class="hero-bg" />
-  <div class="hero-content">
+  <img src="images/bg.jpg" alt="wheat field" class="hero-bg-img" />
+  <div class="hero-content text-center">
     <h1 class="hero-title">Agridera Seeds and Agriculture Ltd</h1>
     <a href="#" class="btn-readmore">READ MORE</a>
   </div>
 </section>
 
-<!-- CATEGORIES -->
+<!-- ===== CATEGORIES STRIP ===== -->
 <section class="categories-strip">
   <div class="container">
-    <div class="row row-cols-7 g-0 justify-content-center">
-      <div class="col d-flex justify-content-center">
+    <div class="row row-cols-7 g-0 text-center">
+
+      <div class="col">
         <div class="cat-item">
-          <img src="images/Vector.png" alt="Wheat" class="cat-icon" />
-          <span class="cat-label">Wheat</span>
+          <div class="cat-emoji">🌾</div>
+          <div class="cat-label">Wheat</div>
         </div>
       </div>
-      <div class="col d-flex justify-content-center">
+
+      <div class="col">
         <div class="cat-item">
-          <img src="images/ico-watermelon.svg" alt="Confection Watermelon" class="cat-icon" />
-          <span class="cat-label">Confection Watermelon</span>
+          <div class="cat-emoji">🍉</div>
+          <div class="cat-label">Confection Watermelon</div>
         </div>
       </div>
-      <div class="col d-flex justify-content-center">
+
+      <div class="col">
         <div class="cat-item">
-          <img src="images/ico-clover.svg" alt="Clover" class="cat-icon" />
-          <span class="cat-label">Clover</span>
+          <div class="cat-emoji">🍀</div>
+          <div class="cat-label">Clover</div>
         </div>
       </div>
-      <div class="col d-flex justify-content-center">
+
+      <div class="col">
         <div class="cat-item">
-          <img src="images/ico-sunflower.svg" alt="Confection Sunflower" class="cat-icon" />
-          <span class="cat-label">Confection Sunflower</span>
+          <div class="cat-emoji">🌻</div>
+          <div class="cat-label">Confection Sunflower</div>
         </div>
       </div>
-      <div class="col d-flex justify-content-center">
+
+      <div class="col">
         <div class="cat-item">
-          <img src="images/ico-tomato.svg" alt="Tomato" class="cat-icon" />
-          <span class="cat-label">Tomato</span>
+          <div class="cat-emoji">🍅</div>
+          <div class="cat-label">Tomato</div>
         </div>
       </div>
-      <div class="col d-flex justify-content-center">
+
+      <div class="col">
         <div class="cat-item">
-          <img src="images/ico-eggplant.svg" alt="Eggplant P/O" class="cat-icon" />
-          <span class="cat-label">Eggplant P/O</span>
+          <div class="cat-emoji">🍆</div>
+          <div class="cat-label">Eggplant P/O</div>
         </div>
       </div>
-      <div class="col d-flex justify-content-center">
+
+      <div class="col">
         <div class="cat-item">
-          <img src="images/ico-ornsunflower.svg" alt="Ornamental Sunflower" class="cat-icon" />
-          <span class="cat-label">Ornamental Sunflower</span>
+          <div class="cat-emoji">🌼</div>
+          <div class="cat-label">Ornamental Sunflower</div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- VISION + MISSION -->
+<!-- ===== VISION + MISSION ===== -->
 <div class="vision-mission-wrapper">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
-  <div class="container">
+
+  <div class="container position-relative" style="z-index:1;">
 
     <!-- Vision -->
-    <div class="vision-row">
-      <div class="vision-text">
+    <div class="row align-items-center mb-5 g-5">
+      <div class="col-lg-5">
         <h2 class="section-title">Vision</h2>
-        <div class="section-dots">
+        <div class="section-dots mb-3">
           <span></span><span></span><span></span><span></span><span></span>
         </div>
         <p class="section-text">
@@ -117,28 +135,34 @@
           the growing population.
         </p>
       </div>
-      <div class="vision-photo">
+      <div class="col-lg-7">
         <img
           src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=700&h=400&fit=crop&auto=format"
           alt="Vision"
+          class="w-100 rounded shadow-sm"
+          style="height:280px;object-fit:cover;"
           onerror="this.src='images/vision.jpg'"
         />
       </div>
     </div>
 
     <!-- Mission -->
-    <div class="mission-row">
-      <div class="mission-photo">
-        <img
-          src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&h=400&fit=crop&auto=format"
-          alt="Mission"
-          onerror="this.src='images/mission.jpg'"
-        />
-        <div class="play-btn"></div>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="position-relative">
+          <img
+            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&h=400&fit=crop&auto=format"
+            alt="Mission"
+            class="w-100 rounded shadow-sm"
+            style="height:280px;object-fit:cover;"
+            onerror="this.src='images/mission.jpg'"
+          />
+          <div class="play-btn"></div>
+        </div>
       </div>
-      <div class="mission-text">
+      <div class="col-lg-5">
         <h2 class="section-title">Mission</h2>
-        <div class="section-dots">
+        <div class="section-dots mb-3">
           <span></span><span></span><span></span><span></span><span></span>
         </div>
         <p class="section-text">
@@ -151,68 +175,63 @@
   </div>
 </div>
 
-<!-- ACTIVITIES -->
+<!-- ===== ACTIVITIES ===== -->
 <section class="activities-section">
   <div class="container">
     <h2 class="activities-title">Agridera&rsquo;s main activities</h2>
-    <div class="section-dots activities-dots d-flex">
+    <div class="section-dots d-flex justify-content-center mb-5">
       <span></span><span></span><span></span><span></span><span></span>
     </div>
+
     <div class="row g-4 justify-content-center">
 
-      <div class="col-md-4">
-        <div class="activity-card">
-          <div class="activity-img-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=300&h=200&fit=crop&auto=format"
-              alt="Open field crop seeds"
-              onerror="this.src='images/cotton.jpg'"
-            />
-          </div>
-          <div class="activity-title">Open field crop seeds</div>
-          <div class="activity-divider"></div>
-          <p class="activity-desc">wheat, cotton, legumes,<br />hybrid confection sunflower</p>
+      <div class="col-md-4 text-center">
+        <div class="activity-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=300&h=200&fit=crop&auto=format"
+            alt="Open field crop seeds"
+            onerror="this.src='images/cotton.jpg'"
+          />
         </div>
+        <div class="activity-title">Open field crop seeds</div>
+        <div class="activity-divider mx-auto mb-3"></div>
+        <p class="activity-desc">wheat, cotton, legumes,<br />hybrid confection sunflower</p>
       </div>
 
-      <div class="col-md-4">
-        <div class="activity-card">
-          <div class="activity-img-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1546470427-e26264be0b0d?w=300&h=200&fit=crop&auto=format"
-              alt="Vegetable seeds"
-              onerror="this.src='images/tomato.jpg'"
-            />
-          </div>
-          <div class="activity-title">Vegetable seeds</div>
-          <div class="activity-divider"></div>
-          <p class="activity-desc">hybrid open field tomatoes,<br />eggplant, onion, paprika, etc.</p>
+      <div class="col-md-4 text-center">
+        <div class="activity-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1546470427-e26264be0b0d?w=300&h=200&fit=crop&auto=format"
+            alt="Vegetable seeds"
+            onerror="this.src='images/tomato.jpg'"
+          />
         </div>
+        <div class="activity-title">Vegetable seeds</div>
+        <div class="activity-divider mx-auto mb-3"></div>
+        <p class="activity-desc">hybrid open field tomatoes,<br />eggplant, onion, paprika, etc.</p>
       </div>
 
-      <div class="col-md-4">
-        <div class="activity-card">
-          <div class="activity-img-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=300&h=200&fit=crop&auto=format"
-              alt="Ornamental seeds"
-              onerror="this.src='images/sunflower.jpg'"
-            />
-          </div>
-          <div class="activity-title">Ornamental seeds</div>
-          <div class="activity-divider"></div>
-          <p class="activity-desc">hybrid cut sunflowers, hybrid<br />patio tomatoes, Bells of Irland, etc.</p>
+      <div class="col-md-4 text-center">
+        <div class="activity-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=300&h=200&fit=crop&auto=format"
+            alt="Ornamental seeds"
+            onerror="this.src='images/sunflower.jpg'"
+          />
         </div>
+        <div class="activity-title">Ornamental seeds</div>
+        <div class="activity-divider mx-auto mb-3"></div>
+        <p class="activity-desc">hybrid cut sunflowers, hybrid<br />patio tomatoes, Bells of Irland, etc.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-top">
+    <div class="d-flex flex-wrap align-items-center justify-content-between pb-3">
       <nav class="footer-nav">
         <a href="#">PROFILE</a>
         <a href="#">MANAGEMENT</a>
@@ -223,11 +242,11 @@
         <a href="#">CONTACT</a>
       </nav>
       <div class="footer-social">
-        <a href="#" title="LinkedIn">in</a>
-        <a href="#" title="Instagram">ig</a>
-        <a href="#" title="Google+">g+</a>
-        <a href="#" title="Twitter">tw</a>
-        <a href="#" title="Facebook">fb</a>
+        <a href="#">in</a>
+        <a href="#">ig</a>
+        <a href="#">g+</a>
+        <a href="#">tw</a>
+        <a href="#">fb</a>
       </div>
     </div>
     <p class="footer-copy">AGRIDERA SEEDS &amp; AGRICULTURE LTD. &copy; 2020</p>
