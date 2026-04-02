@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact us — Agridera Seeds and Agriculture Ltd</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2">
   <div class="container">
     <a class="navbar-brand p-0" href="index.html">
-      <img src="images/Logo@2x.png" alt="Agridera" style="height:58px;width:auto;">
+      <img src="images/Logo@2x.png" alt="Agridera" style="height:56px;width:auto;">
     </a>
     <div class="d-none d-lg-flex align-items-center mx-auto header-search">
-      <input type="text" placeholder="Search" class="header-search-input" />
+      <input type="text" placeholder="Search" class="header-search-input"/>
       <button class="header-search-btn" type="button">
         <img src="images/Group.png" alt="search" style="width:14px;height:14px;opacity:.5;">
       </button>
     </div>
-    <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse" data-bs-target="#mainNav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav4">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse flex-grow-0" id="mainNav">
-            <ul class="navbar-nav ms-auto">
+    <div class="collapse navbar-collapse flex-grow-0" id="nav4">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Company Profile</a></li>
         <li class="nav-item"><a class="nav-link" href="tomato-all.html">Products</a></li>
@@ -38,59 +36,37 @@
   </div>
 </nav>
 
-<!-- ===== HERO BANNER ===== -->
-<div style="height:240px;overflow:hidden;">
-  <img
-    src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&h=400&fit=crop&auto=format"
-    alt="Contact banner — green fields"
-    style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;"
-    onerror="this.src='images/bg.jpg'"
-  />
+<div style="height:220px;overflow:hidden;">
+  <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&h=400&fit=crop&auto=format" alt="Contact banner" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;" onerror="this.src='images/bg.jpg'"/>
 </div>
 
-<!-- ===== CONTACT FORM ===== -->
 <div class="contact-page">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10">
 
         <h1 class="contact-title">Contact us</h1>
-        <div class="section-dots mb-4">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
+        <div class="section-dots mb-4"><span></span><span></span><span></span><span></span><span></span></div>
 
         <form action="#" method="post">
           <div class="row g-0">
-
-            <!-- LEFT COLUMN -->
             <div class="col-md-6 pe-md-4">
-
               <label class="contact-label">Name *</label>
-              <input type="text" class="contact-input" name="name" required />
-
+              <input type="text" class="contact-input" name="name" required/>
               <label class="contact-label">Company Name</label>
-              <input type="text" class="contact-input" name="company" />
-
+              <input type="text" class="contact-input" name="company"/>
               <label class="contact-label">Position</label>
-              <input type="text" class="contact-input" name="position" />
-
+              <input type="text" class="contact-input" name="position"/>
               <label class="contact-label">City</label>
-              <input type="text" class="contact-input" name="city" />
-
+              <input type="text" class="contact-input" name="city"/>
               <label class="contact-label">Country</label>
-              <input type="text" class="contact-input" name="country" />
-
+              <input type="text" class="contact-input" name="country"/>
               <label class="contact-label">Telephone</label>
-              <input type="tel" class="contact-input" name="telephone" />
-
+              <input type="tel" class="contact-input" name="telephone"/>
               <label class="contact-label">Email *</label>
-              <input type="email" class="contact-input" name="email" required />
-
+              <input type="email" class="contact-input" name="email" required/>
             </div>
-
-            <!-- RIGHT COLUMN -->
             <div class="col-md-6 ps-md-2">
-
               <label class="contact-label">You are a</label>
               <div class="contact-select-wrap">
                 <select class="contact-select" name="role">
@@ -102,26 +78,20 @@
                   <option value="other">other</option>
                 </select>
               </div>
-
               <label class="contact-label">If other, please specify</label>
-              <input type="text" class="contact-input" name="other_role" />
-
+              <input type="text" class="contact-input" name="other_role"/>
               <label class="contact-label">You are interested in</label>
               <textarea class="contact-textarea" name="interest"></textarea>
-
-              <!-- Captcha + Send -->
               <label class="contact-label">Please type this code</label>
               <div class="captcha-row">
                 <div class="captcha-code">7 c ƒ ˤ</div>
-                <input type="text" class="captcha-input" name="captcha" placeholder="" />
+                <input type="text" class="captcha-input" name="captcha"/>
                 <button type="submit" class="btn-send">Send Message</button>
               </div>
-
             </div>
           </div>
         </form>
 
-        <!-- Our Address -->
         <div class="address-section">
           <div class="address-title">Our Address</div>
           <div class="address-text">
@@ -137,31 +107,22 @@
   </div>
 </div>
 
-<!-- ===== FOOTER ===== -->
 <footer class="site-footer">
   <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-between pb-3">
-            <nav class="footer-nav">
-        <a href="#">PROFILE</a>
-        <a href="#">MANAGEMENT</a>
-        <a href="tomato-all.html">PRODUCTS</a>
-        <a href="#">R&amp;D</a>
-        <a href="#">LINKS</a>
-        <a href="#">SITEMAP</a>
+    <div class="d-flex flex-wrap align-items-center justify-content-between pb-3 footer-top-wrap gap-3">
+      <nav class="footer-nav">
+        <a href="#">PROFILE</a><a href="#">MANAGEMENT</a>
+        <a href="tomato-all.html">PRODUCTS</a><a href="#">R&amp;D</a>
+        <a href="#">LINKS</a><a href="#">SITEMAP</a>
         <a href="contact.html">CONTACT</a>
       </nav>
       <div class="footer-social">
-        <a href="#">in</a>
-        <a href="#">ig</a>
-        <a href="#">g+</a>
-        <a href="#">tw</a>
-        <a href="#">fb</a>
+        <a href="#">in</a><a href="#">ig</a><a href="#">g+</a><a href="#">tw</a><a href="#">fb</a>
       </div>
     </div>
     <p class="footer-copy">AGRIDERA SEEDS &amp; AGRICULTURE LTD. &copy; 2020</p>
   </div>
 </footer>
-
 <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
