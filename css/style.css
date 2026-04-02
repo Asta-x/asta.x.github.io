@@ -399,3 +399,95 @@ a { text-decoration: none; color: inherit; }
   background: rgba(200,210,200,0.18);
   pointer-events: none;
 }
+
+/* =============================================
+   CONTACT PAGE
+   ============================================= */
+
+.contact-page { background: #f7f7f7; padding: 40px 0 60px; }
+
+.contact-title {
+  font-size: 1.6rem; font-weight: 700;
+  color: var(--heading); margin-bottom: 10px;
+}
+
+/* Form fields */
+.contact-label {
+  font-size: 13px; color: #444;
+  margin-bottom: 4px; display: block;
+}
+.contact-input,
+.contact-select,
+.contact-textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 8px 10px;
+  font-size: 13px; color: #333;
+  background: #fff;
+  outline: none;
+  transition: border-color .2s;
+  margin-bottom: 16px;
+}
+.contact-input:focus,
+.contact-select:focus,
+.contact-textarea:focus { border-color: var(--green); }
+.contact-select { appearance: none; -webkit-appearance: none; cursor: pointer; }
+.contact-select-wrap { position: relative; }
+.contact-select-wrap::after {
+  content: '▾';
+  position: absolute; right: 10px; top: 9px;
+  font-size: 13px; color: #888;
+  pointer-events: none;
+}
+.contact-textarea { height: 148px; resize: vertical; }
+
+/* Captcha row */
+.captcha-row {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 0;
+}
+.captcha-code {
+  font-size: 1.1rem; font-style: italic;
+  letter-spacing: 4px; color: #555;
+  font-family: 'Courier New', monospace;
+  background: #eee; padding: 6px 12px;
+  border-radius: 2px; user-select: none;
+  min-width: 80px; text-align: center;
+}
+.captcha-input {
+  flex: 1;
+  border: 1px solid #ccc; border-radius: 2px;
+  padding: 8px 10px; font-size: 13px;
+  outline: none;
+}
+.captcha-input:focus { border-color: var(--green); }
+
+/* Send button */
+.btn-send {
+  background: var(--green); color: #fff;
+  border: none; border-radius: 2px;
+  padding: 10px 24px;
+  font-size: 13px; font-weight: 600;
+  cursor: pointer; white-space: nowrap;
+  transition: background .2s;
+}
+.btn-send:hover { background: var(--green-dk); }
+
+/* Our Address */
+.address-section { text-align: center; margin-top: 40px; }
+.address-title {
+  font-size: 14.5px; font-weight: 700;
+  color: var(--green); margin-bottom: 14px;
+  position: relative; display: inline-block;
+}
+.address-title::after {
+  content: ''; display: block;
+  width: 100%; height: 1px;
+  background: var(--green); margin-top: 4px;
+}
+.address-text {
+  font-size: 13.5px; color: #555; line-height: 1.9;
+}
+.address-text a { color: var(--green); }
+.address-text a:hover { text-decoration: underline; }
