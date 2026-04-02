@@ -196,3 +196,91 @@ a { text-decoration: none; color: inherit; }
   .hero-title { font-size: 1.3rem; }
   .footer-social { justify-content: center; margin-top: 10px; }
 }
+
+/* =============================================
+   TOMATO-ALL PAGE — додаткові стилі
+   ============================================= */
+
+/* Page hero banner */
+.page-hero {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0;
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+}
+
+/* Content wrapper */
+.page-content { padding: 40px 0 60px; background: #fff; }
+
+/* Page title */
+.page-title {
+  font-size: 1.7rem; font-weight: 700;
+  color: var(--heading); margin-bottom: 10px;
+}
+
+/* Intro text */
+.intro-text { font-size: 13.5px; color: #444; line-height: 1.8; margin-bottom: 14px; }
+.intro-text strong { font-weight: 600; }
+
+/* Blockquote highlight */
+.highlight-quote {
+  border-left: 4px solid #ccc;
+  padding: 12px 18px;
+  font-size: 13px; color: #555;
+  line-height: 1.7;
+  margin: 22px 0;
+  background: transparent;
+}
+
+/* 3-col sub-section */
+.subcol-title {
+  font-size: 13.5px; font-weight: 700;
+  color: #333; margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #ddd;
+}
+.subcol-title span { font-weight: 400; color: #555; }
+.subcol-text { font-size: 13px; color: #555; line-height: 1.75; }
+.subcol-text strong { color: #333; }
+
+/* Distributor note */
+.distributor-note {
+  border-left: 4px solid #ccc;
+  padding: 10px 16px;
+  font-size: 13px; color: #555;
+  margin: 30px 0 26px;
+}
+
+/* Product cards grid */
+.product-card {
+  border: none; border-radius: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow .2s;
+}
+.product-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.14); }
+.product-card-img {
+  width: 100%; height: 160px;
+  object-fit: cover; display: block;
+}
+.product-card-body {
+  padding: 10px 12px 14px;
+  background: #fff;
+  text-align: center;
+}
+.product-card-code {
+  font-size: 12.5px; font-weight: 700;
+  color: #333; margin-bottom: 3px;
+}
+.product-card-name {
+  font-size: 12px;
+  color: var(--green);
+  line-height: 1.35;
+}
