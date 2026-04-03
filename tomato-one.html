@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TAG 1002 (TAG 809) — Agridera</title>
+  <title>Hot Pepper Product — Agridera</title>
   <link rel="stylesheet" href="css/bootstrap.min.css"/>
   <link rel="stylesheet" href="css/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+
+<div id="app">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2">
   <div class="container">
@@ -39,62 +43,104 @@
 <div class="product-page">
   <div class="container">
 
-    <a href="tomato-all.html" class="back-link">&#8592; Return to all tomatoes</a>
+    <a href="tomato-all.html" class="back-link">&#8592; Return to all peppers</a>
 
-    <div class="row g-4 g-lg-5">
-      <div class="col-lg-6 order-2 order-lg-1">
-        <div class="product-tag-code">TAG 1002 (TAG 809)</div>
-        <div class="product-tag-name">Tomato Determinate<br>Red Standard Round</div>
-        <div class="section-dots mb-3"><span></span><span></span><span></span><span></span><span></span></div>
+    <!-- Відображається тільки якщо товар знайдений -->
+    <div v-if="product && product.id">
+      <div class="row g-4 g-lg-5">
 
-        <div class="quality-badge">
-          <div class="quality-icon">🍅</div>
-          <div class="quality-text">Very high yield and<br/>excellent fruits quality!</div>
+        <!-- LEFT: інфо -->
+        <div class="col-lg-6 order-2 order-lg-1">
+          <div class="product-tag-code">{{ product.title }}</div>
+          <div class="product-tag-name" style="color:#c0392b;">Hot Pepper Hybrid</div>
+          <div class="section-dots mb-3">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+
+          <div class="quality-badge">
+            <div class="quality-icon">🌶️</div>
+            <div class="quality-text">Very high yield and<br/>excellent heat quality!</div>
+          </div>
+
+          <div class="char-section">
+            <div class="char-title">DESCRIPTION</div>
+            <p class="char-value">{{ product.desc }}</p>
+          </div>
+
+          <div class="row g-3 mt-2">
+            <div class="col-6">
+              <div class="spec-title">Plant</div>
+              <ul class="spec-list">
+                <li>Strong vigor and high yield.</li>
+                <li>Disease resistant variety.</li>
+                <li>Early matured hybrid.</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <div class="spec-title">Cycle</div>
+              <ul class="spec-list">
+                <li>Spring</li>
+                <li>Summer</li>
+                <li>Fall</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <div class="spec-title">Fruit</div>
+              <ul class="spec-list">
+                <li>Long shelf life after harvest.</li>
+                <li>Bright attractive color.</li>
+                <li>Uniform fruit size.</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <div class="spec-title">Heat Level</div>
+              <p class="spec-value mt-1" style="color:#c0392b;font-weight:600;">🌶️ Hot</p>
+            </div>
+          </div>
+
+          <!-- Кнопки Cart -->
+          <div class="mt-4 d-flex gap-3 flex-wrap">
+
+            <!-- Add to cart — показується якщо btnVisible === 0 -->
+            <button
+              v-if="btnVisible === 0"
+              @click="addToCart(product.id)"
+              style="background:#4a7c59;color:#fff;border:none;border-radius:3px;padding:11px 28px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s;"
+              onmouseover="this.style.background='#2d5a3a'"
+              onmouseout="this.style.background='#4a7c59'"
+            >
+              🛒 Add to cart
+            </button>
+
+            <!-- Go to cart — показується якщо btnVisible === 1 -->
+            <a
+              v-if="btnVisible === 1"
+              href="contact.html"
+              style="background:#c0392b;color:#fff;border:none;border-radius:3px;padding:11px 28px;font-size:14px;font-weight:600;cursor:pointer;display:inline-block;transition:background .2s;"
+            >
+              ✔ Go to cart
+            </a>
+
+          </div>
         </div>
 
-        <div class="char-section">
-          <div class="char-title">CHARACTERISTICS</div>
-          <div class="char-label">Resistance</div>
-          <div class="char-value">HR: ToMV:0-2; Fol: 1,2; Ve/Vd;<br>IR: TYLCV</div>
+        <!-- RIGHT: фото -->
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img :src="product.image" :alt="product.title"
+               class="product-main-img"
+               onerror="this.src='images/tomato-hero.jpg'"/>
+          <a href="#" class="btn-download-pdf">&#128196; Download PDF</a>
+          <div class="clearfix"></div>
         </div>
 
-        <div class="row g-3 mt-1">
-          <div class="col-6">
-            <div class="spec-title">Plant</div>
-            <ul class="spec-list">
-              <li>Strong vigor that provides good leaf coverage.</li>
-              <li>Very high productivity with good fruit setting.</li>
-              <li>Early matured variety.</li>
-            </ul>
-          </div>
-          <div class="col-6">
-            <div class="spec-title">Cycle</div>
-            <ul class="spec-list">
-              <li>Spring</li>
-              <li>Fall</li>
-              <li>Winter</li>
-            </ul>
-          </div>
-          <div class="col-6">
-            <div class="spec-title">Fruit</div>
-            <ul class="spec-list">
-              <li>Long shelf life on plant and post harvest.</li>
-              <li>Nice shiny attractive deep red color.</li>
-              <li>Average fruit size: 140 – 160 grams.</li>
-            </ul>
-          </div>
-          <div class="col-6">
-            <div class="spec-title">Color</div>
-            <p class="spec-value mt-1">Red</p>
-          </div>
-        </div>
       </div>
+    </div>
 
-      <div class="col-lg-6 order-1 order-lg-2">
-        <img src="https://images.unsplash.com/photo-1594054135476-9a5afa76af95?w=700&h=500&fit=crop&auto=format" alt="TAG 1002 Tomato" class="product-main-img" onerror="this.src='images/tomato-hero.jpg'"/>
-        <a href="#" class="btn-download-pdf">&#128196; Download PDF</a>
-        <div class="clearfix"></div>
-      </div>
+    <!-- Якщо товар не знайдений -->
+    <div v-else style="text-align:center;padding:60px 0;color:#888;">
+      <p style="font-size:1.2rem;">Product not found.<br>
+        <a href="tomato-all.html" style="color:#4a7c59;">← Return to all peppers</a>
+      </p>
     </div>
 
   </div>
@@ -116,6 +162,9 @@
     <p class="footer-copy">AGRIDERA SEEDS &amp; AGRICULTURE LTD. &copy; 2020</p>
   </div>
 </footer>
+
+</div><!-- #app -->
+
 <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
