@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Agridera Seeds and Agriculture Ltd</title>
   <link rel="stylesheet" href="css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <script src="js/main.js" defer></script>
-</head>
+  <link rel="stylesheet" href="css/style.css"/></head>
 <body>
 <div id="app">
 
@@ -27,13 +24,45 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse flex-grow-0" id="nav1">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link  active" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Company Profile</a></li>
         <li class="nav-item"><a class="nav-link" href="tomato-all.html">Products</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="#">R &amp; D</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+        <!-- ── КОШИК DROPDOWN ── -->
+        <li class="nav-item ms-2" id="cart-dropdown-wrap">
+          <div class="cart-nav-wrap">
+            <div class="cart-nav-btn" @click.stop="toggleCart">
+              <span class="cart-nav-icon">🛒</span>
+              <span style="font-size:13px;">Cart</span>
+              <span class="cart-nav-count" v-if="cartCount > 0">{{ cartCount }}</span>
+            </div>
+            <div class="cart-dropdown" v-show="showCartDropdown" @click.stop>
+              <div class="cart-dropdown-header">
+                <span>🛒 Your Cart ({{ cartCount }})</span>
+                <button class="cart-dropdown-close" @click="closeCart">&times;</button>
+              </div>
+              <div v-if="cart.length === 0" class="cart-dropdown-empty">
+                Cart is empty.<br><small>Browse products to add items.</small>
+              </div>
+              <div v-for="item in cart" :key="item.id" class="cart-dropdown-item">
+                <img :src="item.image" :alt="item.title" class="cart-dropdown-img"/>
+                <div style="flex:1;min-width:0;">
+                  <div class="cart-dropdown-title">{{ item.title }}</div>
+                  <div class="cart-dropdown-short">{{ item.short_text }}</div>
+                </div>
+                <button class="cart-dropdown-remove" @click="removeFromCart(item.id)">&times;</button>
+              </div>
+              <div class="cart-dropdown-footer" v-if="cart.length > 0">
+                <span class="cart-dropdown-total">{{ cartCount }} item<span v-if="cartCount > 1">s</span></span>
+                <a href="contact.html" class="cart-dropdown-btn">Order Now →</a>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -144,5 +173,7 @@
 
 </div><!-- #app -->
 <script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

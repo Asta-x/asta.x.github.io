@@ -5,9 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hot Pepper Product — Agridera</title>
   <link rel="stylesheet" href="css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="css/style.css"/>  <style>
+    .btn-cart-add {
+      background: #4a7c59; color: #fff; border: none; border-radius: 3px;
+      padding: 11px 28px; font-size: 14px; font-weight: 600;
+      cursor: pointer; transition: background .2s;
+    }
+    .btn-cart-add:hover { background: #2d5a3a; }
+    .btn-cart-go {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #2d5a3a; color: #fff; border-radius: 3px;
+      padding: 11px 24px; font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: background .2s;
+    }
+    .btn-cart-go:hover { background: #1a3a22; color: #fff; }
+    .btn-cart-badge {
+      background: #fff; color: #2d5a3a;
+      font-size: 12px; font-weight: 800;
+      width: 22px; height: 22px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -28,13 +46,45 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse flex-grow-0" id="nav3">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Company Profile</a></li>
         <li class="nav-item"><a class="nav-link active" href="tomato-all.html">Products</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="#">R &amp; D</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+        <!-- ── КОШИК DROPDOWN ── -->
+        <li class="nav-item ms-2" id="cart-dropdown-wrap">
+          <div class="cart-nav-wrap">
+            <div class="cart-nav-btn" @click.stop="toggleCart">
+              <span class="cart-nav-icon">🛒</span>
+              <span style="font-size:13px;">Cart</span>
+              <span class="cart-nav-count" v-if="cartCount > 0">{{ cartCount }}</span>
+            </div>
+            <div class="cart-dropdown" v-show="showCartDropdown" @click.stop>
+              <div class="cart-dropdown-header">
+                <span>🛒 Your Cart ({{ cartCount }})</span>
+                <button class="cart-dropdown-close" @click="closeCart">&times;</button>
+              </div>
+              <div v-if="cart.length === 0" class="cart-dropdown-empty">
+                Cart is empty.<br><small>Browse products to add items.</small>
+              </div>
+              <div v-for="item in cart" :key="item.id" class="cart-dropdown-item">
+                <img :src="item.image" :alt="item.title" class="cart-dropdown-img"/>
+                <div style="flex:1;min-width:0;">
+                  <div class="cart-dropdown-title">{{ item.title }}</div>
+                  <div class="cart-dropdown-short">{{ item.short_text }}</div>
+                </div>
+                <button class="cart-dropdown-remove" @click="removeFromCart(item.id)">&times;</button>
+              </div>
+              <div class="cart-dropdown-footer" v-if="cart.length > 0">
+                <span class="cart-dropdown-total">{{ cartCount }} item<span v-if="cartCount > 1">s</span></span>
+                <a href="contact.html" class="cart-dropdown-btn">Order Now →</a>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -45,11 +95,18 @@
 
     <a href="tomato-all.html" class="back-link">&#8592; Return to all peppers</a>
 
-    <!-- Відображається тільки якщо товар знайдений -->
-    <div v-if="product && product.id">
+    <!-- Товар знайдено -->
+    <div v-if="product">
       <div class="row g-4 g-lg-5">
 
-        <!-- LEFT: інфо -->
+        <!-- Фото — зверху на мобільному -->
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img :src="product.image" :alt="product.title" class="product-main-img"/>
+          <a href="#" class="btn-download-pdf">&#128196; Download PDF</a>
+          <div class="clearfix"></div>
+        </div>
+
+        <!-- Інфо -->
         <div class="col-lg-6 order-2 order-lg-1">
           <div class="product-tag-code">{{ product.title }}</div>
           <div class="product-tag-name" style="color:#c0392b;">Hot Pepper Hybrid</div>
@@ -79,9 +136,7 @@
             <div class="col-6">
               <div class="spec-title">Cycle</div>
               <ul class="spec-list">
-                <li>Spring</li>
-                <li>Summer</li>
-                <li>Fall</li>
+                <li>Spring</li><li>Summer</li><li>Fall</li>
               </ul>
             </div>
             <div class="col-6">
@@ -98,48 +153,38 @@
             </div>
           </div>
 
-          <!-- Кнопки Cart -->
-          <div class="mt-4 d-flex gap-3 flex-wrap">
+          <!-- ── КНОПКИ КОШИКА ── -->
+          <div class="mt-4 d-flex gap-3 flex-wrap align-items-center">
 
-            <!-- Add to cart — показується якщо btnVisible === 0 -->
+            <!-- Додати в кошик — поки не додано -->
             <button
               v-if="btnVisible === 0"
               @click="addToCart(product.id)"
-              style="background:#4a7c59;color:#fff;border:none;border-radius:3px;padding:11px 28px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s;"
-              onmouseover="this.style.background='#2d5a3a'"
-              onmouseout="this.style.background='#4a7c59'"
+              class="btn-cart-add"
             >
               🛒 Add to cart
             </button>
 
-            <!-- Go to cart — показується якщо btnVisible === 1 -->
+            <!-- Перейти в кошик — після додавання -->
             <a
               v-if="btnVisible === 1"
               href="contact.html"
-              style="background:#c0392b;color:#fff;border:none;border-radius:3px;padding:11px 28px;font-size:14px;font-weight:600;cursor:pointer;display:inline-block;transition:background .2s;"
+              class="btn-cart-go"
             >
               ✔ Go to cart
+              <span class="btn-cart-badge">{{ cartCount }}</span>
             </a>
 
           </div>
         </div>
-
-        <!-- RIGHT: фото -->
-        <div class="col-lg-6 order-1 order-lg-2">
-          <img :src="product.image" :alt="product.title"
-               class="product-main-img"
-               onerror="this.src='images/tomato-hero.jpg'"/>
-          <a href="#" class="btn-download-pdf">&#128196; Download PDF</a>
-          <div class="clearfix"></div>
-        </div>
-
       </div>
     </div>
 
-    <!-- Якщо товар не знайдений -->
+    <!-- Товар не знайдено (немає hash) -->
     <div v-else style="text-align:center;padding:60px 0;color:#888;">
-      <p style="font-size:1.2rem;">Product not found.<br>
-        <a href="tomato-all.html" style="color:#4a7c59;">← Return to all peppers</a>
+      <p style="font-size:1.1rem;">
+        Please select a product from the list.<br>
+        <a href="tomato-all.html" style="color:#4a7c59;">&#8592; Browse all peppers</a>
       </p>
     </div>
 
@@ -164,7 +209,8 @@
 </footer>
 
 </div><!-- #app -->
-
 <script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
